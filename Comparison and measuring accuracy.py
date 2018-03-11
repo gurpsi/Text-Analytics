@@ -1,5 +1,3 @@
-# The definition for improving accuracy is created by Gurpreet Singh, rest is from UCD Professor.
-
 #This program learn to compare between male and females, on providing the test data. (Supervised learning)
 #And we compare the accuracy for the old function vs the modified function.
 
@@ -9,7 +7,6 @@ import random
 
 def gender_features(word):
     return {'last_letter': word[-1]}
-# gender_features('Shrek') = {'last_letter': 'k'}
 
 vowel=['A','E','I','O','U','a','e','i','o','u']
 def modified_gender_features(word):
@@ -25,7 +22,6 @@ random.shuffle(labeled_names)
 featuresets_old = [(gender_features(n), gender) for (n, gender) in labeled_names]
 featuresets_new = [(modified_gender_features(n), gender) for (n,gender) in labeled_names]
 
-#entries are    ({'last_letter': 'g'}, 'male')
 train_set_old, test_set_old = featuresets_old[500:], featuresets_old[:500]
 train_set_new, test_set_new = featuresets_new[500:], featuresets_new[:500]
 
